@@ -1,5 +1,5 @@
 {
-  "name": "igorbunov/smsc-api-php-sdk",
+  "name": "igorbunov/smsc-php-sdk",
   "description": "PHP SDK for integration with smsc.ru api",
   "type": "library",
   "license": "MIT",
