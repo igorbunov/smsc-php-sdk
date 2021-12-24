@@ -52,7 +52,7 @@ $result = $api->sendSms($phones, $message, $sender): \igorbunov\Smsc\Response\Se
 ##### Получить статус сообщения:
 
 ```php
-    $result = $api->getSmsStatus('id сообщения', 'номер телефона'): \igorbunov\Smsc\Status\SmsStatus;
+$result = $api->getSmsStatus('id сообщения', 'номер телефона'): \igorbunov\Smsc\Status\SmsStatus;
 ```
 
 ##### Отправка email сообщения:
@@ -62,7 +62,12 @@ $result = $api->sendSms($phones, $message, $sender): \igorbunov\Smsc\Response\Se
 // $message - сообщение
 // $theme - тема
 // $sender - email отправителя
-$result = $api->sendEmail($emails, $message, $theme, $sender): \igorbunov\Smsc\Response\SendEmailResponse;
+$result = $api->sendEmail(
+    $emails,
+    $message,
+    $theme,
+    $sender
+): \igorbunov\Smsc\Response\SendEmailResponse;
 ```
 
 ##### Регистрация субакаунта:
