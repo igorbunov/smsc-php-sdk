@@ -199,7 +199,8 @@ class SmscJsonApi
             'fmt=3',
             'op=1',
             'sender=' . $parentSender,
-            'fl2[24]=1'
+            'fl2[24]=1',
+            'fl[29]'
         ], $this->config->credentials());
 
         $response = $this->guzzleClient->request(
