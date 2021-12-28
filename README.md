@@ -77,7 +77,7 @@ $result = $api->sendEmail(
 // $subPassword - пароль субакаунта (не допускаются простые пароли)
 // $subEmail - почта субакаунта
 // $subPhone - телефон субакаунта
-// $parentSender - имя отправителя родителя (sender id)
+// $parentSender - имя отправителя родителя (sender id) (не обязательно)
 $result = $api->registerSubclient(
     $subLogin,
     $subPassword,
@@ -85,6 +85,12 @@ $result = $api->registerSubclient(
     $subPhone,
     $parentSender
 ): \igorbunov\Smsc\Response\NewSubclient;
+```
+
+##### Обновить баланс субакаунта:
+
+```php
+$result = $api->updateSubclientBalance($subLogin, $balance): \igorbunov\Smsc\Response\UpdateBalance;
 ```
 
 ##### Простой пример отправки

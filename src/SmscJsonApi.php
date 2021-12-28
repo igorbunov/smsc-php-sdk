@@ -184,13 +184,13 @@ class SmscJsonApi
         return new SendEmailResponse($jsonResponse);
     }
 
-    public function registerSubclient($subLogin, $subPassword, $subEmail, $subPhone, $parentSender): NewSubclient
+    public function registerSubclient($subLogin, $subPassword, $subEmail, $subPhone, $parentSender = ''): NewSubclient
     {
-        $params = array_merge([
-            'user=' .urlencode($subLogin),
-            'password=' .urlencode($subPassword),
-            'email=' .$subEmail,
-            'phone=' .$subPhone,
+        $vals = [
+            'user=' . urlencode($subLogin),
+            'password=' . urlencode($subPassword),
+            'email=' . $subEmail,
+            'phone=' . $subPhone,
             'reseller=1',
             'type=0',
             'tariff=0',
@@ -198,10 +198,15 @@ class SmscJsonApi
             'add=1',
             'fmt=3',
             'op=1',
-            'sender=' . $parentSender,
-            'fl2[24]=1',
-            'fl[29]'
-        ], $this->config->credentials());
+            'fl2[24]=1'
+        ];
+
+        if (!empty($parentSender)) {
+            $vals[] = 'sender=' . $parentSender;
+            $vals[] = 'fl[29]';
+        }
+
+        $params = array_merge($vals, $this->config->credentials());
 
         $response = $this->guzzleClient->request(
             self::METHOD_POST,
