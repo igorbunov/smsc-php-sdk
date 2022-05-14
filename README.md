@@ -1,3 +1,9 @@
+![GitHub CI](https://github.com/igorbunov/smsc-php-sdk/workflows/CI/badge.svg)
+[![Packagist](https://img.shields.io/badge/package-igorbunov/smsc--php--sdk-blue.svg?style=flat-square)](https://github.com/igorbunov/smsc-php-sdk)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/igorbunov/smsc-php-sdk.svg?style=flat-square)](https://github.com/igorbunov/smsc-php-sdk)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
+[![PHP >=8.0](https://img.shields.io/badge/php-%3E=_8.0-orange.svg?style=flat-square)](https://github.com/igorbunov/smsc-php-sdk)
+
 # smsc-php-sdk
 ### PHP SDK для работы с Мессенджером sms центр api
 
@@ -122,4 +128,65 @@ try {
     var_dump('Ошибка', $e->getMessage());
     echo '</pre>';
 }
+```
+
+# Для котрибьюторов
+
+
+For run all tests
+```shell
+make all
+```
+or connect to terminal
+```shell
+make exec
+```
+
+or use built in php server [http://localhost:8080](http://localhost:8080)
+```shell
+# start server on 8080 port
+make serve
+# custom port 8081
+make serve PORT=8081
+```
+
+*Dafault php version is 8.1*. Use PHP_VERSION= for using custom version.
+```shell
+make all PHP_VERSION=8.1
+# run both
+make all PHP_VERSION=7.4 && make all PHP_VERSION=8.1
+```
+
+all commands
+```shell
+# security check
+make security
+# composer install
+make install
+# composer install with --no-dev
+make install-no-dev
+# check code style
+make style
+# run static analyze tools
+make static-analyze
+# run unit tests
+make unit
+#  check coverage
+make coverage
+```
+
+Without Docker
+```
+#validate composer json
+composer check-composer
+
+#static analyzes and codestyle
+composer static
+
+#run unit tests
+composer unit-tests
+
+#run all tests
+
+composer all-tests
 ```

@@ -5,3 +5,6 @@ error.log
 nbproject/*
 /vendor/*
 index.php
+/build/logs/*
+.phpunit.result.cache
+.DS_Store

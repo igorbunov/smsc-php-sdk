@@ -89,7 +89,7 @@ class SmscJsonApi
         ], $this->config->credentials());
 
         if (!empty($sender)) {
-            $params[]= 'sender=' . $sender;
+            $params[] = 'sender=' . $sender;
         }
 
         $response = $this->guzzleClient->request(
