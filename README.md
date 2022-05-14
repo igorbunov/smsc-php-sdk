@@ -3,6 +3,7 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/igorbunov/smsc-php-sdk.svg?style=flat-square)](https://github.com/igorbunov/smsc-php-sdk)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 [![PHP >=8.0](https://img.shields.io/badge/php-%3E=_8.0-orange.svg?style=flat-square)](https://github.com/igorbunov/smsc-php-sdk)
+[![Total Downloads](https://poser.pugx.org/igorbunov/smsc-php-sdk/downloads)](https://github.com/igorbunov/smsc-php-sdk)
 
 # smsc-php-sdk
 ### PHP SDK для работы с Мессенджером sms центр api
@@ -171,8 +172,6 @@ make style
 make static-analyze
 # run unit tests
 make unit
-#  check coverage
-make coverage
 ```
 
 Without Docker
